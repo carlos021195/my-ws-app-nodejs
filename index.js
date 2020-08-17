@@ -3,7 +3,7 @@ const path = require('path');
 const WebSocket = require('ws'); // new
 const app = express();
 
-const socketServer = new WebSocket.Server({port: 3030});
+const socketServer = new WebSocket.Server({port: process.env.PORT || 3000});
 
 socketServer.on('connection', (socketClient) => {
   console.log('connected');
